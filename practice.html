@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/styles.css">
+  <title>Tailwind CSS</title>
+
+</head>
+<body class="text-gray-600">
+  <a id="top" href="#"></a>
+
+  <h1 class="text-center text-2xl bg-blue-300 py-2 "> Practice Tailwind</h1>
+  <div class="m-4 text-sm">
+    <div>
+      <h1> SET UP</h1>
+    </div>
+    <div>
+      <p>Liste des commandes à faire dans l'ordre :</p>
+      <ol class ="list-decimal ml-6 marker:text-red-500">
+        <li> npm init -y </li>
+        <li> npm install -D tailwindcss </li>
+        <li> npx tailwindcss init </li>
+        <li> faire les liens avec les pages, dans tailwind.config.js </li>
+        <li> ajouter les directives dans src/styles.css</li>
+          <ul class="list-none">
+            <li>@tailwind base;</li>
+            <li>@tailwind components;</li>
+            <li>@tailwind utilities;</li>
+          </ul>
+        <li>lier les pages de styles entre src et public : </li>
+          <ul> npx tailwindcss -i ./src/styles.css -o ./public/styles.css --watch</ul>
+        <li>lier les pages html avec la page de style public</li>
+          <ul>link href="/public/styles.css" rel="stylesheet"</ul>
+      </ol>
+    </div>
+
+    <h1> UTILISER LES CLASSES TAILWINDCSS</h1>
+
+    <div class="flex justify-items-center ">
+      <div class="brd-primary">
+        <h3>Fonts & colors </h3>
+
+        <p> utiliser text-(color) pour modifier la couleur </p>
+        <p>ajouter un - après la couleur pour ajuster l'opacité</p>
+        <p> <a href="https://tailwindcss.com/docs/customizing-colors " >lien couleur tailwind</a></p>
+        <p> utiliser bg suivi d'une couleur et de l'opacité pour modifier le background color</p>
+        <p> on peut ajouter une ombre, avec drop shadow</p>
+        <p><a href="https://tailwindcss.com/docs/drop-shadow"> Drop shadow</a></p>
+        <p> on peut le passer en hover, pour aussi changer la couleur du texte...</p>
+      </div>
+
+      <div class="brd-primary">
+        <h3>Padding, margins & borders </h3>
+
+        <p> pour modifier les marges, padding et borders, utiliser p- et m- suivi de la taille </p>
+        <p><a href="https://tailwindcss.com/docs/padding" >lien Padding tailwind</a></p>
+        <p><a href="https://tailwindcss.com/docs/margin" >lien margin tailwind</a></p>
+        <p>pour les bordures, on peut ajouter du radius, la couleur, la taille, et le style. bien ajuster le width en fonction de la taille et des items</p>
+        <p><a href="https://tailwindcss.com/docs/border-radius">lien bordure radius</a></p>
+        <p> il faut tout mettre sur la même ligne dans la classe</p>
+      </div>
+    </div>
+
+    <div class="flex justify-items-center ">
+      <div class="brd-primary">
+        <h3>Customize classes </h3>
+
+        <p> pour modifier des classes, il faut le faire dans le tailwind.config</p>
+        <p> dans la section theme, on va modifier les valeurs que l'on veut modifier, comme la couleur, espace ...</p>
+        <p> il faut définir l'objet à modifier, puis définir de nouvelles clés/valeurs</p>
+        <p><a href="https://tailwindcss.com/docs/theme"> lien modifier classes tailwind</a></p>
+        <p> pour ajouter de nouvelles classes, on va le faire dans la section extend, de la même façon</p>
+
+        <p> on peut aussi créer son propre template, avec des directives que l'on veut appliquer, on peut le faire dans src/styles.css</p>
+        <p><a href="https://tailwindcss.com/docs/functions-and-directives#directives">fonctions et directives tailwind</a></p>
+      </div>
+
+
+      <div class="brd-primary">
+        <h3>Personal fonts</h3>
+
+        <p> on peut aussi importer des types d'écritures depuis google font. pour ça on choisit les styles que l'on veut, et on les importer dans le src/styles.css</p>
+        <p> il faut après l'ajouter à l'extend dans tailwind.config, pour pouvoir l'utiliser</p>
+      </div>
+    </div>
+
+    <h3>Flexbox</h3>
+
+    <p>on peut utiliser des flexbox, pour positionner les items et contenus</p>
+    <p> il faut ajouter la classe flex, puis un justifify suivi de la position</p>
+    <p><a href="https://tailwindcss.com/docs/flex"> Flexbox</a></p>
+    <p><a href="https://tailwindcss.com/docs/justify-content"> Justifify content</a></p>
+    <p><a href="https://tailwindcss.com/docs/justify-items"> Justifify items</a></p>
+
+  <h3> Responsive Medias</h3>
+
+  <p> pour modifier les éléments en fonction de la taille de l'écran, il faut ajouter dans les classes les points de changements</p>
+  <p> sm: 640px, md:768px, lg: 1024px, xl:1280px, 2xl: 1536px</p>
+  <p><a href="https://tailwindcss.com/docs/responsive-design">Responsive Tailwind</a></p>
+  <p> les media queries s'appliquent des que le point de rupture le plus bas est atteint</p>
+
+
+  <h3> GRIDS</h3>
+
+  <p> pour créer une grille, il faut passer un grid sur une div</p>
+  <p> il faut aussi y passer le nombre de colonnes que l'on veut: grid grid-cols-NOMBRE</p>
+  <p> on peut utiliser la fonction gap, pour espacer les éléments</p>
+  <p> pour une colonne de 3 éléments, si on veut faire qu'une colonne prenne 2 places, on passe le col-span-2 sur la div concernée et un col-span-1 sur l'autre div</p>
+  <p><a href="https://tailwindcss.com/docs/grid-column"> Grid column</a></p>
+
+  <div class="grid md:grid-cols-3 mt-4 gap-10">
+
+    <div class="card">
+      <img src="img/bibli 1.jpg" alt="library 1" class="w-full h-32 object-cover sm:h-48 " >
+      <p> Bibliothèque du Trinity College</p>
+      <p>Dublin</p>
+    </div>
+
+    <div class="card">
+      <img src="img/bibli 2.jpg" alt="library 2" class="w-full h-32 object-cover sm:h-48 ">
+      <p> Bibliothèque George Peabody</p>
+      <p>Baltimore</p>
+    </div>
+
+    <div class="card">
+      <img src="img/bibli 3.jpg" alt="library 3" class="w-full h-32 object-cover sm:h-48 ">
+      <p> Bibliothèque de l’Abbaye de Saint-Gall</p>
+      <p>Suisse</p>
+    </div>
+  </div>
+
+  <h3>Icons</h3>
+
+  <p>possibilité d'utiliser heroicicons et d'utiliser le format svg pour l'insérer directement dans le html</p>
+
+  <h3> Hidden item</h3>
+
+  <p>pour faire apparaitre un menu qui serait caché en fonction de la taille de l'écran, ou qui apparait après avoir cliqué dessus, on peut ajouter la classe tailwind hidden à un élément, et faire un addEventListener avec du JS pour l'afficher si on clique dessus</p>
+  <p> une autre solution serait de prévoir le cas pour chaque type d'écran, et d'utiliser un hidden et un toggle</p>
+  <p><a href="https://www.section.io/engineering-education/creating-a-responsive-navigation-bar-using-tailwind-css-and-javascript/">Multiples screens navbar</a></p>
+
+  <h3>Transitions</h3>
+  <div>
+    <p>on peut ajouter des transitions sur des éléments avec la classe transition, suivi des effets que l'on veut ajouter</p>
+    <p><a href="https://tailwindcss.com/docs/transition-timing-function"> transition tailwind</a></p>
+    <p> utiliser scale, pour augmenter ou diminuer la taille d'un élément</p>
+
+  </div>
+  <div class="flex items-center p-8">
+    <div>
+      <p  class="btn transition ease-in-out duration-400 hover:bg-yellow-400"><a href="#">LOG IN</a></p>
+    </div>
+    <div>
+      <p class="btn hover:scale-125 hover:duration-300"><a href="#">LOG IN</a></p>
+    </div>
+  </div>
+
+
+  <h1>Just in Time TAILWINDCSS</h1>
+
+  <h3> Just in time add  v2</h3>
+
+  <p> pour ajouter JIT, et purger tous les styles qui ne sont pas utilisés par les fichiers html, on va ajouter les commandes --JIT --purge="./*html" lorsque l'on va lier les styles.css</p>
+  <p> npx tailwindcss -i ./src/styles.css -o ./public/styles.css --JIT --purge="./*html"</p>
+  <p> si on ajoute de nouvelles classes, il va falloir relancer la commande pour avoir les changements</p>
+  <p> en dvpt, rajouter le --watch à la fin de la commande, pour qu'elle s'execute en arrière plan</p>
+
+  <p>utiliser ["./*html"] dans le purge du tailwind.config pour appliquer le tailwind à tous les fichiers html</p>
+  <p>commande valable aussi pour la v3</p>
+
+  <h3> Using arbitrary values</h3>
+
+  <p> on peut passer dans les classes entre [] des valeurs arbitraires, afin de les insérer dans le code. on peut faire ça pour des couleurs, tailles de police</p>
+  <p>utile à utiliser si on connait les valeurs, et que l'on veut les ajouter une fois</p>
+  <p> plus pratique de créer une nouvelle classe, si on les réutilise et de les insérer dans le @layer base, components ou utilities</p>
+  <p> </p>
+
+  <p><a href="https://tailwindcss.com/docs/adding-custom-styles#using-arbitrary-values">valeurs arbitraires</a></p>
+  <p></p>
+
+  <h3>Utiliser Tailwind Css avec Next.js</h3>
+
+  <p> suivre la procédure d'installation fournie sur tailwind</p>
+  <p><a href="https://tailwindcss.com/docs/guides/nextjs">installation tailwind next.js</a></p>
+
+  <h3> Add CSS variables</h3>
+
+  <p> pour ajouter des variables CSS réutilisables, on peut les créer dans le public/styles.css</p>
+  <p> on crée des variables dans le :root, et on les nomme avec deux traits devant : --</p>
+  <p>on peut ensuite appeler les variables n'importe où dans la feuille de style. On peut également nester les variables, en définit une première variable, suivi de var(seconde variable) </p>
+  <p> ex:</p>
+  <p> --bg-color-1: #1f2937</p>
+  <p> --bg-color-2: var(--bg-color-1) </p>
+  <p> on peut aussi créer ses propres classes dans le theme de tailwind.config puis les exporter dans le root</p>
+  <p>on peut aussi importer le thème par défaut de tailwind</p>
+  <p><a href="https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js">tailwind default theme</a> </p>
+
+  <h3>CREATE DARK & LIGHT MODE</h3>
+
+
+  <p><a href="https://tailwindcss.com/docs/dark-mode">lien dark-mode tailwind</a></p>
+  <p> il existe plusieurs méthodes pour créer un dark/might mode: </p>
+  <p> on peut créer manuellement des classes avec le préfix dark: qui s'appliqueront si l'utilisateur choisi le mode dark sur son navigateur</p>
+  <p></p>
+  <p>il faut après créer un bouton avec un toggle en JS pour pouvoir changer le mode </p>
+
+  <div class=" flex  w-[650px] h-96 overflow-hidden items-center">
+
+    <div class="h-screen flex items-center justify-center px-8 bg-white dark:bg-black-700">
+      <div class="max-w-[600px] shadow-md p-6 rounded-md bg-white dark:bg-gray-600">
+        <div class=" flex items-start sm:items-center mb-4">
+          <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+            <img id="theme-toggle-dark-icon" class="hidden w-5 h-5" src="./img/moon.png" alt="">
+            <img id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"   src="./img/sun.png" alt="">
+          </button>
+          <h1 class="text-4xl flex-1"> Tailwind Dark/light Mode</h1>
+
+        </div>
+        <p class="text-md mb-4 dark:text-white">Comment changer la couleur des classes avec un bouton</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a href="#top"><button class= " w-6 h-6 fixed bottom-10 right-10" ><img src="./img/btn top.png" alt=""></button></a>
+</div>
+<script src="src/practice.js"></script>
+</body>
+</html>

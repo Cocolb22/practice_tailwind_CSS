@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+:root{
+  --bg-color-dark1: #4b5563; /* style crée directement dans CSS */
+  --bg-color-dark2: theme(colors.black.700); /* style créé et importé wia tailwind.config */
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body{
+    @apply font-body text-gray-600;
+  }
+
+  h1 {
+    @apply text-xl text-center font-bold py-2 text-yellow-400;
+  }
+
+  a {
+    @apply text-blue-600 ;
+  }
+
+  h3 {
+    @apply text-lg font-bold pl-4;
+  }
+
+  p {
+    @apply first-letter:capitalize;
+  }
+  
+  .html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer components {
+.brd-primary {
+  @apply border border-solid border-red-500 m-2 p-2 rounded-lg w-1/2;
+}
+
+.brd-secondary {
+  @apply bg-gray-300 rounded-full p-1;
+
+}
+
+.card {
+  @apply bg-white rounded-sm overflow-hidden shadow-md hover:drop-shadow-xl;
+}
+
+.btn {
+  @apply border rounded-lg border-solid border-blue-300 bg-yellow-200 uppercase p-2 m-2 ;
+}
+}
